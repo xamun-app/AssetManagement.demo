@@ -1,0 +1,148 @@
+<div class="container d-flex justify-content-center pt-5">
+  <form
+    [formGroup]="addEditProductForm"
+    id="12:6898"
+    class="divAddEditAsset-126898"
+  >
+    <div id="12:7423" class="divHeader-127423">
+      <div
+        *ngIf="action === 'Add'"
+        id="12:7424"
+        class="lblAddEditProduct-127424"
+      >
+        Add Product
+      </div>
+      <div
+        *ngIf="action === 'Edit'"
+        id="12:7424"
+        class="lblAddEditProduct-127424"
+      >
+        Edit Product
+      </div>
+      <button
+        mat-button=""
+        id="12:7425"
+        class="btn btnmatClose-127425"
+        type="button"
+        (click)="goToAssetListPage()"
+      >
+        <div id="12:7426" class="svgClose-127426">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.21875 0.78125L0.78125 2.21875L9.5625 11L0.78125 19.7812L2.21875 21.2188L11 12.4375L19.7812 21.2188L21.2188 19.7812L12.4375 11L21.2188 2.21875L19.7812 0.78125L11 9.5625L2.21875 0.78125Z"
+              fill="#212121"
+            ></path>
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div id="12:7427" class="divUtility-127427">
+      <div id="12:7428" class="divNameRow-127428">
+        <div id="12:7430" class="lblAssetName-127430">Asset Name</div>
+        <mat-form-field
+          appearance="outline"
+          id="12:7464"
+          class="form-control txtoutlineInputName-127464"
+        >
+          <mat-label>Input Name</mat-label>
+          <input matInput type="text" formControlName="assetName" />
+        </mat-form-field>
+      </div>
+      <div id="12:7687" class="divItemDescriptionRow-127687">
+        <div id="12:7689" class="lblItemDescription-127689">
+          Item Description
+        </div>
+        <mat-form-field
+          appearance="outline"
+          id="12:7723"
+          class="form-control txtoutlineInputDescription-127723"
+        >
+          <mat-label>Input Description</mat-label>
+          <input matInput type="text" formControlName="itemDescription" />
+        </mat-form-field>
+      </div>
+      <div id="12:7946" class="divDivider-127946"></div>
+    </div>
+    <div id="12:6899" class="divConfiguration-126899">
+      <div id="12:8015" class="divConfig-128015">
+        <div id="12:7255" class="lblConfiguration-127255">Configuration</div>
+
+        <div id="12:7245" class="divToggle-127245">
+          <div id="12:7249" class="svgToggle-127249">
+            <svg
+              width="58"
+              height="30"
+              viewBox="0 0 58 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M15.813 0C7.52872 0 0.812988 6.71573 0.812988 15C0.812988 23.2843 7.52872 30 15.813 30H42.9999C51.2841 30 57.9999 23.2843 57.9999 15C57.9999 6.71573 51.2841 0 42.9999 0H15.813Z"
+                fill="#522E86"
+              ></path>
+              <circle cx="43" cy="15" r="13" fill="white"></circle>
+            </svg>
+          </div>
+          <div id="12:7254" class="lblActive-127254">Active</div>
+        </div>
+      </div>
+      <div id="12:7256" class="divDropdowns-127256">
+        <mat-form-field
+          appearance="outline"
+          id="12:7258"
+          class="form-control drpoutlineClass-127258"
+        >
+          <mat-select placeholder="Select Class">
+            <mat-option value="N/A">Select Class</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field
+          appearance="outline"
+          id="12:7293"
+          class="form-control drpoutlineCategory-127293"
+        >
+          <mat-select placeholder="Select Category">
+            <mat-option value="N/A">Select Category</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div id="12:7947" class="divFooter-127947">
+      <button
+        mat-button=""
+        id="12:7949"
+        class="btn btnmatCancel-127949"
+        (click)="goToAssetListPage()"
+      >
+        Cancel</button
+      ><button
+        mat-button=""
+        id="12:7982"
+        class="btn btnmatSave-127982"
+        (click)="save()"
+      >
+        Save
+        <svg
+          width="16"
+          height="12"
+          viewBox="0 0 16 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M9.72852 0.238281L8.83008 1.13672L13.0684 5.375H0.529297V6.625H13.0684L8.83008 10.8633L9.72852 11.7617L15.041 6.44922L15.4707 6L15.041 5.55078L9.72852 0.238281Z"
+            fill="white"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </form>
+</div>

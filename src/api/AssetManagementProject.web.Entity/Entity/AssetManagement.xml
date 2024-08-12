@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<model>
+	<entity name="Asset">
+		<property name="Name" type="string" stringLength="150" />
+		<property name="Description" type="string" stringLength="250" />
+		<property name="IsActive" type="bool"/>
+		<property name="CategoryId" type="int" foreignKeyEntity="Category"/>
+		<property name="ClassId" type="int" foreignKeyEntity="Class"/>
+		<association>
+			<property relationship="one" entity="Category" name="Category"/>
+			<property relationship="one" entity="AssetClass" name="AssetClass"/>
+		</association>
+	</entity>
+	<entity name="Category">
+		<property name="Name" type="string" stringLength="150" />
+		<property name="Description" type="string" stringLength="250" />
+	</entity>
+	<entity name="AssetClass">
+		<property name="Name" type="string" stringLength="150" />
+		<property name="Description" type="string" stringLength="250" />
+	</entity>
+	<entity name="AssetMaintenance">
+		<property name="AssetId" type="int" foreignKeyEntity="Asset"/>
+		<property name="Location" type="string" stringLength="150"/>
+		<property name="Cost" type="decimal" />
+		<property name="Status" type="string" stringLength="150"/>
+		<property name="LastMaintenanceDate" type="DateTime"/>
+		<property name="NextMaintenanceDate" type="DateTime"/>
+		<association>
+			<property relationship="one" entity="Asset" name="Asset"/>
+		</association>
+	</entity>
+</model>

@@ -1,0 +1,116 @@
+<div class="d-flex">
+  <app-tracking-page-sidebar></app-tracking-page-sidebar>
+  <div class="w-100">
+    <app-tracking-page-header></app-tracking-page-header>
+    <app-view-maintenance-history-breadcrumb></app-view-maintenance-history-breadcrumb>
+    <div id="2062:20866" class="divcontent-206220866">
+      <div id="2059:33015" class="divheader-205933015">
+        <div id="2059:33016" class="lblview-205933016">
+          View Maintenance Details
+        </div>
+        <button
+          mat-button=""
+          id="2059:33018"
+          class="btn btnmatbutton-205933018"
+        >
+          Back to Dashboard
+        </button>
+      </div>
+      <div id="2059:32991" class="divcontainer-205932991">
+        <div id="2059:32992" class="divleft-205932992">
+          <div id="2059:32996" class="divrow-205932996">
+            <div id="2059:32998" class="lbltext-205932998">
+              Asset Description Here
+            </div>
+            <div id="2059:32997" class="lblTtile-205932997">Asset Status</div>
+          </div>
+          <div id="2059:32993" class="divrow-205932993">
+            <div id="2059:32995" class="lbltext-205932995">John Doe</div>
+            <div id="2059:32994" class="lblTtile-205932994">Asset Monitor</div>
+          </div>
+        </div>
+        <div id="2059:33002" class="divright-205933002">
+          <div id="2059:33012" class="divrow-205933012">
+            <div id="2059:33014" class="lbltext-205933014">Site 1</div>
+            <div id="2059:33013" class="lblTitle-205933013">Current Site</div>
+          </div>
+          <div id="2059:33009" class="divrow-205933009">
+            <div id="2059:33011" class="lbltext-205933011">Philippines</div>
+            <div id="2059:33010" class="lblTitle-205933010">
+              Current Territory
+            </div>
+          </div>
+          <div id="2059:33006" class="divrow-205933006">
+            <div id="2059:33008" class="lbltext-205933008">12/12/2023</div>
+            <div id="2059:33007" class="lblTitle-205933007">
+              Monitoring Date
+            </div>
+          </div>
+          <div id="2059:33003" class="divrow-205933003">
+            <div id="2059:33005" class="lbltext-205933005">Jane Doe</div>
+            <div id="2059:33004" class="lblTitle-205933004">Assigned By</div>
+          </div>
+        </div>
+      </div>
+      <div id="2059:33050" class="divcontainer-205933050">
+        <div id="2062:20868" class="divtable-206220868">
+          <div class="table-card">
+            <table mat-table [dataSource]="dataSource" class="w-100">
+              <ng-container matColumnDef="ServiceName">
+                <th mat-header-cell *matHeaderCellDef>Service Name</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.ServiceName }}
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="Type">
+                <th mat-header-cell *matHeaderCellDef>Type</th>
+                <td mat-cell *matCellDef="let element">{{ element.Type }}</td>
+              </ng-container>
+              <ng-container matColumnDef="Reason">
+                <th mat-header-cell *matHeaderCellDef>Reason</th>
+                <td mat-cell *matCellDef="let element">{{ element.Reason }}</td>
+              </ng-container>
+              <ng-container matColumnDef="Status">
+                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <td mat-cell *matCellDef="let element">{{ element.Status }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="ServiceDate">
+                <th mat-header-cell *matHeaderCellDef>Service Date</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.ServiceDate }}
+                </td>
+                <ng-container matColumnDef="GivenBy">
+                  <th mat-header-cell *matHeaderCellDef>Given By</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.GivenBy }}
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="TotalCost">
+                  <th mat-header-cell *matHeaderCellDef>Total Cost</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.TotalCost }}
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Notes">
+                  <th mat-header-cell *matHeaderCellDef>Notes</th>
+                  <td mat-cell *matCellDef="let element">
+                    {{ element.Notes }}
+                  </td>
+                </ng-container>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+          </div>
+        </div>
+        <div id="2062:20867" class="divtop-206220867">
+          <div id="2059:33051" class="lblborrowhistory-205933051">
+            Maintenance History
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+[
+    {
+        "ClientId": "clientAPI1",
+        "AllowedGrantTypes": [ "client_credentials" ],
+        "ClientSecrets": [
+            {
+                "Value": "AssetManagementProject.web-secret",
+                "Description": "AssetManagementProject.web secret"
+            }
+        ],
+        "AllowedScopes": [ "AssetManagementProject.web" ]
+    },
+    {
+        "ClientId": "AssetManagementProject.webClient",
+        "AllowedGrantTypes": [ "password" ],
+        "ClientSecrets": [
+            {
+                "Value": "AssetManagementProject.web-secret",
+                "Description": "AssetManagementProject.web secret"
+            }
+        ],
+        "AllowedScopes": [ "AssetManagementProject.web" ]
+    }
+]

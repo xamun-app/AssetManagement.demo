@@ -1,0 +1,33 @@
+{
+  "IdentityData": {
+    "Roles": [
+      {
+        "Name": "CatalystAdmin"
+      },
+      {
+        "Name": "Administrator"
+      },
+      {
+        "Name":  "ApplicationUser"
+      }
+    ],
+    "Users": [
+      {
+        "Username": "admin",
+        "Password": "P@ssword",
+        "Email": "admin@example.com",
+        "Roles": [
+          "CatalystAdmin",
+          "Administrator",
+          "ApplicationUser"
+        ],
+        "Claims": [
+          {
+            "Type": "name",
+            "Value": "admin"
+          }
+        ]
+      }
+    ]
+  }
+}

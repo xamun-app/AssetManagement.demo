@@ -1,0 +1,366 @@
+.divSidePanel-206718461 {
+  width: 265px;
+  height: 1024px;
+  opacity: 1;
+  border: none !important;
+  background-color: #eee5ff;
+}
+.divMenu-206718558 {
+  display: flex;
+  position: absolute;
+  width: 265px;
+  opacity: 1;
+  border: none !important;
+}
+.btnmatDashboard-206718559,
+.btnmatAssetTracking-206718664,
+.btnmatSetting-206719082 {
+  height: 44px;
+  width: 100%;
+  opacity: 1;
+  border: none !important;
+  background-color: #eee5ff;
+  display: flex;
+  align-items: center;
+  border-radius: 0px;
+}
+
+.btnmatAssetManagement-206718600 {
+  height: 44px;
+  width: 265px;
+  opacity: 1;
+  border: none !important;
+  background-color: #6363e7;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.btnmatMovementHistory-206719018 {
+  height: 44px;
+  width: 265px;
+  opacity: 1;
+  border: none !important;
+  background-color: #c6a8ff;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 13px;
+  line-height: 26px;
+  text-decoration: NONE;
+  color: #522e86;
+  border-radius: 0px;
+}
+.btnmatTrackingAnalytics-206719018 {
+  height: 44px;
+  width: 265px;
+  opacity: 1;
+  border: none !important;
+  background-color: #deccff;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 13px;
+  line-height: 26px;
+  text-decoration: NONE;
+  color: #522e86;
+  border-radius: 0px;
+}
+.btnmatMaintenance-206719050 {
+  height: 44px;
+  width: 265px;
+  opacity: 1;
+  border: none !important;
+  background-color: #deccff;
+  align-items: center;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 13px;
+  line-height: 26px;
+  text-decoration: NONE;
+  color: #522e86;
+  border-radius: 0px;
+}
+
+.svgRightArrowIcon-206718622 {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  margin-left: 32px;
+  top: 12px;
+  opacity: 1;
+  border: none !important;
+  padding: 0;
+  place-self: center end;
+}
+
+.svgRightArrowIcon-206718589 {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  margin-left: 86px;
+  top: 12px;
+  opacity: 1;
+  border: none !important;
+  padding: 0;
+  place-self: center end;
+}
+.svgRightArrowIcon-206719110 {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  margin-left: 116px;
+  top: 12px;
+  opacity: 1;
+  border: none !important;
+  padding: 0;
+  place-self: center end;
+}
+
+.svgRightArrowIcon-206718686 {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  margin-left: 66px;
+  top: 12px;
+  opacity: 1;
+  border: none !important;
+  padding: 0;
+  place-self: center end;
+}
+
+.divDashboard-206718560,
+.divAssetTracking-206718665,
+.divSetting-206719083 {
+  gap: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 9px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 13px;
+  line-height: 26px;
+  text-decoration: NONE;
+  color: #522e86;
+  width: 100%;
+  height: fit-content;
+  opacity: 1;
+  border-radius: 6px;
+  border: none !important;
+}
+.divAssetManagement-206718601 {
+  gap: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 9px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 13px;
+  line-height: 26px;
+  text-decoration: NONE;
+  color: white;
+  width: 100%;
+  height: fit-content;
+  opacity: 1;
+  border-radius: 6px;
+  border: none !important;
+}
+
+.btltext-206718572 {
+  width: 75px;
+  margin-left: 59px;
+  top: 9px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 13px;
+  line-height: 26px;
+  opacity: 1;
+  text-decoration: NONE;
+  border: none !important;
+  color: #522e86;
+}
+
+.svgDashboard-206718561,
+.svgAssetManagemnt-206718602,
+.svgAssetTracking-206718666,
+.svgSetting-206719084 {
+  display: flex;
+  width: 26px;
+  height: 26px;
+  top: 9px;
+  opacity: 1;
+  border: none !important;
+  padding: 0;
+}
+
+.btltext-206718604 {
+  position: absolute;
+  width: 122px;
+  margin-left: 59px;
+  top: 9px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 12px;
+  line-height: 26px;
+  opacity: 1;
+  text-decoration: NONE;
+  border: none !important;
+  color: #f4f4f8;
+}
+
+.btlAssetTracking-206718668 {
+  position: absolute;
+  width: 92px;
+  margin-left: 59px;
+  top: 9px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 12px;
+  line-height: 26px;
+  opacity: 1;
+  text-decoration: NONE;
+  border: none !important;
+  color: #522e86;
+}
+
+.btlMovementHistory-206719022 {
+  position: absolute;
+  width: 114px;
+  top: 9px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 12px;
+  opacity: 1;
+  text-decoration: NONE;
+  border: none !important;
+  color: #522e86;
+}
+
+.btlMaintenance-206719054 {
+  position: absolute;
+  width: 83px;
+  top: 9px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 12px;
+  opacity: 1;
+  text-decoration: NONE;
+  border: none !important;
+  color: #522e86;
+}
+
+.btlSetting-206719092 {
+  position: absolute;
+  width: 45px;
+  margin-left: 59px;
+  top: 9px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 12px;
+  line-height: 26px;
+  opacity: 1;
+  text-decoration: NONE;
+  border: none !important;
+  color: #522e86;
+}
+
+.divCompany-206718464 {
+  position: relative;
+  width: 265px;
+  height: 66px;
+  opacity: 1;
+  border: none !important;
+  background-color: #d7caed;
+}
+.svgLeftArrow-206718470 {
+  position: absolute;
+  display: flex;
+  width: 24px;
+  height: 15.839998245239258px;
+  right: 15px;
+  top: 25px;
+  opacity: 1;
+  border: none !important;
+  padding: 0;
+}
+.svgXamunLogo-206718475 {
+  position: absolute;
+  width: 119.9327621459961px;
+  height: 37.32788848876953px;
+  margin-left: 19.06723976135254px;
+  top: 14px;
+  opacity: 1;
+  border: none !important;
+  padding: 0;
+}
+.btnsidebar {
+  font-family: Poppins;
+  font-weight: SemiBold;
+  font-size: 13px;
+  text-decoration: NONE;
+  color: #522e86;
+  display: block;
+  width: 265px;
+  height: 44px;
+  opacity: 1;
+  border: none !important;
+  background-color: #eee5ff;
+}
+.btnsidebarActive {
+  font-family: Poppins;
+  font-weight: SemiBold;
+  font-size: 13px;
+  text-decoration: NONE;
+  color: #f4f4f8;
+  display: block;
+  width: 265px;
+  height: 44px;
+  opacity: 1;
+  border: none !important;
+  background-color: #6363e7;
+}
+.divRight {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 16px;
+  right: 10px;
+  opacity: 1;
+  border: none !important;
+}
+.divLeft {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  bottom: 5px;
+  left: 25px;
+  opacity: 1;
+  border: none !important;
+}
+.btntext {
+  position: absolute;
+  bottom: 5px;
+  left: 70px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 12px;
+  line-height: 26px;
+  opacity: 1;
+  text-decoration: NONE;
+  border: none !important;
+  color: #522e86;
+}
+.btntextActive {
+  position: absolute;
+  bottom: 5px;
+  left: 70px;
+  font-family: Poppins;
+  font-weight: Bold;
+  font-size: 13px;
+  line-height: 26px;
+  text-decoration: NONE;
+  color: white;
+  opacity: 1;
+  border-radius: 6px;
+  border: none !important;
+}

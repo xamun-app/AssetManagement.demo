@@ -1,0 +1,221 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using AssetManagementProject.web.STS.Identity.Configuration.Interfaces
+@using AssetManagementProject.web.STS.Identity.Helpers.Localization
+@inject IViewLocalizer Localizer
+@model AssetManagementProject.web.STS.Identity.ViewModels.Account.LoginViewModel
+@inject IRootConfiguration RootConfiguration
+<head>
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<div class="login-page">
+
+    <div class="row">
+
+        @if (Model.EnableLocalLogin)
+        {
+            <!---------------------------------------------------------->
+            <div class="d-flex flex-column flex-root h-100" id="kt_login_wrapper" style="width:100%">
+                <!--begin::Login-->
+                <div class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white" id="kt_login">
+                    <!--begin::Aside-->
+                    <div class="login-aside d-flex flex-column flex-row-auto" style="background-color: #F4F4F8; min-height: 100vh;">
+                        <!--begin::Aside Top-->
+                        <div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15" style="margin-top: 5em;">
+                            <!--begin::Aside header-->
+                            <a href="#" class="text-center mb-10" style="margin-bottom: 1em;">
+                                <img src="@Url.Content("~/images/xamun_logo.png")" class="" style="max-height: 12vh !important;" />
+                            </a>
+                            <!--end::Aside header-->
+                            <!--begin::Aside title-->
+                            <h3 class="font-weight-bolder text-center font-size-h4 font-size-h1-lg" style="color: #3C1874; width: 50%; margin: auto;">
+                                Xamun Identity Server
+                            </h3>
+                            <!--end::Aside title-->
+                        </div>
+                        <!--end::Aside Top-->
+                        <!--begin::Aside Bottom-->
+                        <div class="aside-img d-flex flex-row-fluid bgi-no-repeat bgi-position-y-bottom bgi-position-x-center"
+                             style="background-image: url( @Url.Content("~/images/login-art.png") );background-position: bottom;background-size: auto;"></div>
+                        <!--end::Aside Bottom-->
+                    </div>
+                    <!--begin::Aside-->
+                    <!--begin::Content-->
+                    <div class="login-content flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto" style=" height: 100vh;">
+                        <!--begin::Content body-->
+                        <div class="d-flex flex-column-fluid flex-center">
+                            <!--begin::Signin-->
+                            <div class="login-form login-signin">
+                                <!--begin::Form-->
+                                <input type="hidden" asp-for="ReturnUrl" />
+
+
+                                <!--validation-->
+                                @await Html.PartialAsync("_ValidationSummary")
+
+                                <!--begin::Title-->
+                                <div class="pb-13 pt-lg-0 pt-5" style="padding-bottom: 2em !important;">
+                                    <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">
+                                        Welcome to Xamun
+                                    </h3>
+                                    <span class="text-muted font-weight-bold font-size-h4">Your all-in-one identity server.</span>
+                                </div>
+                                <!--end::Title-->
+                                <!--begin::Form group-->
+                                <form asp-route="Login">
+                                    <input type="hidden" asp-for="ReturnUrl" />
+
+                                    <fieldset>
+                                        <!--begin::Form group-->
+                                        <div class="form-group">
+                                            <label class="font-size-h6 font-weight-bolder text-dark">Email</label>
+                                            <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" placeholder="@Localizer[LoginPolicyResolutionLocalizer.GetUserNameLocalizationKey(Model.LoginResolutionPolicy)]" asp-for="Username" aria-label="Username" aria-describedby="input-username" autofocus>
+                                            <div asp-validation-for="Username" class="text-danger" style="margin-top: 3px;"></div>
+                                        </div>
+                                        <!--end::Form group-->
+                                        <!--begin::Form group-->
+                                        <div class="form-group">
+                                            <label class="font-size-h6 font-weight-bolder text-dark">Password</label>
+                                            <input type="password" class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" placeholder="@Localizer["Password"]" aria-label="Password" aria-describedby="input-password" asp-for="Password" autocomplete="off">
+                                            <div asp-validation-for="Password" class="text-danger" style="margin-top: 3px;"></div>
+                                        </div>
+
+                                        <!--end::Form group-->
+                                        <!--begin::Action-->
+                                        <div class="row pb-lg-0 pb-5">
+
+                                            <button type="submit"
+                                                    id="kt_login_signin_submit"
+                                                    class="btn font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3"
+                                                    style="background: #8950FC;width: 50%;margin-left: 13px; color: white;height: 50px;"
+                                                    name="button" value="login">
+                                                @Localizer["Login"]
+                                            </button>
+
+                                            <!---register-->
+                                            @if (RootConfiguration.RegisterConfiguration.Enabled)
+                                            {
+                                                <a asp-action="Register" asp-controller="Account" value="forgot" style="line-height: 0; text-align: center; width: 42%; "  class="text-primary font-weight-bolder px-8 py-4 my-3 font-size-lg">@Localizer["Register"]</a>
+                                            }
+
+                                            @if (Model.VisibleExternalProviders.Any())
+                                            {
+                                                <ul class="list-inline">
+                                                    <!---For Google and Facebook-->
+                                                    @foreach (var provider in Model.VisibleExternalProviders)
+                                                    {
+                                                        <li class="list-inline-item">
+                                                            @if (@provider.DisplayName == "Facebook")
+                                                            {
+                                                                <a class="btn font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3"
+                                                                   style="background: #3B5998; width: 100%; margin-left: 13px; color: white;"
+                                                   asp-controller="Account"
+                                                   asp-action="ExternalLogin"
+                                                   asp-route-scheme="@provider.AuthenticationScheme"
+                                                   asp-route-returnUrl="@Model.ReturnUrl">
+                                                                    <img src="@Url.Content("~/images/fb-logo.png")" style=" height: 13px; margin-right: 5px;" />
+                                                                    @provider.DisplayName
+                                                                </a>
+                                                            }
+
+                                                            @if (@provider.DisplayName == "Google")
+                                                            {
+                                                                <a class="btn font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3"
+                                                                   style="background: #D34836;width: 100%; margin-left: 13px; color: white;"
+                                                   asp-controller="Account"
+                                                   asp-action="ExternalLogin"
+                                                   asp-route-scheme="@provider.AuthenticationScheme"
+                                                   asp-route-returnUrl="@Model.ReturnUrl">
+                                                                    <img src="@Url.Content("~/images/google-logo.png")" style=" height: 20px; margin-right: 5px;" />
+                                                                    @provider.DisplayName
+                                                                </a>
+                                                            }
+
+                                                            @if (@provider.DisplayName == "Azure AD")
+                                                            {
+                                                                <a class="btn font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3"
+                                                                   style="background: #ADD8E6; width: 100%; margin-left: 13px; color: white;"
+                                                   asp-controller="Account"
+                                                   asp-action="ExternalLogin"
+                                                   asp-route-scheme="@provider.AuthenticationScheme"
+                                                   asp-route-returnUrl="@Model.ReturnUrl">
+                                                                    <img src="@Url.Content("~/images/microsoft.png")" style=" height: 13px; margin-right: 5px;" />
+                                                                   Microsoft
+                                                                </a>
+                                                            }
+                                                            @if (@provider.DisplayName.ToLower() == "github")
+                                                            {
+                                                                <a class="btn font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3"
+                                                                   style="background: #5e5757; width: 100%; margin-left: 13px; color: white;"
+                                                                   asp-controller="Account"
+                                                                   asp-action="ExternalLogin"
+                                                                   asp-route-scheme="@provider.AuthenticationScheme"
+                                                                   asp-route-returnUrl="@Model.ReturnUrl">
+                                                                    <img src="@Url.Content("~/images/github.png")" style=" height: 13px; margin-right: 5px;" />
+                                                                   GitHub
+                                                                </a>
+                                                            }
+                                                        </li>
+                                                    }
+
+                                                </ul>
+                                            }
+
+                                            @if (!Model.EnableLocalLogin && !Model.VisibleExternalProviders.Any())
+                                            {
+                                                <div class="alert alert-warning">
+                                                    <strong>@Localizer["InvalidRequest"]</strong>
+                                                    @Localizer["NoSchema"]
+                                                </div>
+                                            }
+
+
+                                        </div>
+                                        <!--end::Action-->
+
+                                        <!---footer-->
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm" style="margin: auto;">
+                                                    <!--forgot password-->
+                                                    <a asp-action="ForgotPassword" asp-controller="Account" class="text-primary font-weight-bolder px-8 py-4 my-3 font-size-lg" value="forgot">@Localizer["Forgot"]</a>
+                                                </div>
+                                                <div class="col-sm">
+                                                    <div class="row">
+                                                        @if (Model.AllowRememberLogin)
+                                                        {
+                                                            <div class="" style="margin: auto;">
+                                                                @Localizer["Remember"]
+                                                            </div>
+                                                            <div class="col-sm">
+                                                                <toggle-button>
+                                                                    <input asp-for="RememberLogin" type="checkbox">
+                                                                </toggle-button>
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!---cancel-->
+                                        @*<a style="line-height: 0;width: 42%;text-align: center;" name="button" value="cancel" class="text-primary font-weight-bolder px-8 py-4 my-3 font-size-lg">@Localizer["Cancel"]</a>*@
+                                        <!---->
+
+                                    </fieldset>
+                                </form>
+                                <!--end::Form-->
+                            </div>
+                            <!--end::Signin-->
+                        </div>
+                        <!--end::Content body-->
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Login-->
+            </div>
+            <!---------------------------------------------------------->
+        }
+     
+    </div>
+</div>
+

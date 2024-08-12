@@ -1,0 +1,222 @@
+<div class="d-flex w-100 h-100">
+  <app-asset-maintenance-report-sidebar></app-asset-maintenance-report-sidebar>
+  <div class="w-100">
+    <app-asset-maintenance-report-header></app-asset-maintenance-report-header>
+
+    <app-asset-inventory-report-breadcrumb></app-asset-inventory-report-breadcrumb>
+    <div id="2127:5649" class="divcontent-21275649 p-3">
+      <div
+        class="divTop d-flex align-items-center justify-content-between px-3"
+      >
+        <div id="2127:11389" class="divlbltitle-212711389">
+          Asset Maintenance Report
+        </div>
+        <button
+          mat-button=""
+          id="2127:11357"
+          class="btn btnmatbutton-212711357"
+        >
+          <div id="2127:11358" class="svgAddIcon-212711358">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.375 3.125V9.375H3.125V10.625H9.375V16.875H10.625V10.625H16.875V9.375H10.625V3.125H9.375Z"
+                fill="white"
+              ></path>
+            </svg>
+          </div>
+          <div id="2127:11373" class="divbtladdproduct-212711373">
+            Generate Report
+          </div>
+        </button>
+      </div>
+      <div class="container-fluid pt-4">
+        <div id="3369:871" class="divtable-3369871">
+          <div class="table-card">
+            <table mat-table [dataSource]="dataSource" class="w-100">
+              <ng-container matColumnDef="Id">
+                <th mat-header-cell *matHeaderCellDef>ID #</th>
+                <td mat-cell *matCellDef="let element">{{ element.Id }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="AssetName">
+                <th mat-header-cell *matHeaderCellDef>Asset Name</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.AssetName }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="Category">
+                <th mat-header-cell *matHeaderCellDef>Category</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.Category }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="Location">
+                <th mat-header-cell *matHeaderCellDef>Location</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.Location }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="Type">
+                <th mat-header-cell *matHeaderCellDef>Type</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.Type }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="Cost">
+                <th mat-header-cell *matHeaderCellDef>Cost</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.Cost }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="Status">
+                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <td mat-cell *matCellDef="let element">
+                  <div
+                    class="status-style"
+                    [ngClass]="{
+                      ongoingStatus: element.Status === 'Ongoing',
+                      repairedStatus: element.Status === 'Repaired',
+                      stoppedStatus: element.Status === 'Stopped'
+                    }"
+                  >
+                    {{ element.Status }}
+                  </div>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="LastMaintenance">
+                <th mat-header-cell *matHeaderCellDef>Last Maintenance</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.LastMaintenance }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="NextMaintenance">
+                <th mat-header-cell *matHeaderCellDef>Next Maintenance</th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.NextMaintenance }}
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+          </div>
+          <div
+            id="782:122089"
+            class="divpagination-782122089 d-flex justify-content-between px-3"
+          >
+            <div id="782:122090" class="drpdisplay-782122090">
+              <div id="782:122092" class="divdropdown-782122092">
+                <div id="782:122093" class="svgdropdown-782122093">
+                  <svg
+                    width="17"
+                    height="16"
+                    viewBox="0 0 17 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.6484 10.3984C14.8438 10.2031 14.8438 9.88281 14.6484 9.6875L8.85156 3.89844C8.65625 3.70312 8.34375 3.70312 8.14844 3.89844L2.35156 9.6875C2.15625 9.88281 2.15625 10.2031 2.35156 10.3984L3.64844 11.6875C3.84375 11.8828 4.15625 11.8828 4.35156 11.6875L8.5 7.53906L12.6484 11.6875C12.8438 11.8828 13.1563 11.8828 13.3516 11.6875L14.6484 10.3984Z"
+                      fill="#80808F"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div id="782:122091" class="lbltext-782122091">10</div>
+            </div>
+            <div id="782:122107" class="divleft-782122107">
+              <div
+                id="782:122108"
+                class="
+                  divpagination-782122108
+                  d-flex
+                  flex-row-reverse
+                  gap-2
+                  justify-content-center
+                "
+              >
+                <button id="782:122169" class="btn ibtmatnext-782122169">
+                  <div id="782:122170" class="svgleft-782122110">
+                    <svg
+                      width="19"
+                      height="18"
+                      viewBox="0 0 19 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.8945 9.84766L7.07422 16.7031C6.72266 17.0195 6.19531 17.0195 5.87891 16.7031L5.07031 15.8945C4.75391 15.5781 4.75391 15.0508 5.07031 14.6992L10.4844 9.25L5.07031 3.83594C4.75391 3.48438 4.75391 2.95703 5.07031 2.64062L5.87891 1.83203C6.19531 1.51562 6.72266 1.51562 7.07422 1.83203L13.8945 8.6875C14.2109 9.00391 14.2109 9.53125 13.8945 9.84766Z"
+                        fill="#464E5F"
+                      ></path>
+                    </svg>
+                  </div></button
+                ><button id="782:122153" class="btn ibtmatnormal-782122153">
+                  3</button
+                ><button id="782:122137" class="btn ibtmatnormal-782122137">
+                  2
+                  <!-- <div id="782:122138" class="svgtwo-782122138">
+          <svg
+            width="19"
+            height="18"
+            viewBox="0 0 19 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.68763 12.978C6.87297 12.026 7.80163 11.2467 8.47363 10.64C9.14563 10.024 9.7103 9.38467 10.1676 8.722C10.6343 8.05 10.8676 7.392 10.8676 6.748C10.8676 6.14133 10.7183 5.66533 10.4196 5.32C10.1303 4.96533 9.65897 4.788 9.00563 4.788C8.37097 4.788 7.8763 4.98867 7.52163 5.39C7.1763 5.782 6.98963 6.30933 6.96163 6.972H5.72963C5.76697 5.92667 6.0843 5.11933 6.68163 4.55C7.27897 3.98067 8.04897 3.696 8.99163 3.696C9.95297 3.696 10.7136 3.962 11.2736 4.494C11.843 5.026 12.1276 5.75867 12.1276 6.692C12.1276 7.46667 11.8943 8.22267 11.4276 8.96C10.9703 9.688 10.4476 10.332 9.85963 10.892C9.27163 11.4427 8.5203 12.0867 7.60563 12.824H12.4216V13.888H5.68763V12.978Z"
+              fill="#464E5F"
+            ></path>
+          </svg>
+        </div> --></button
+                ><button id="782:122121" class="btn ibtmatselected-782122121">
+                  1
+                  <!-- <div id="782:122122" class="svgone-782122122">
+          <svg
+            width="19"
+            height="18"
+            viewBox="0 0 19 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.28981 5.04V3.878H9.92181V14H8.63381V5.04H7.28981Z"
+              fill="white"
+            ></path>
+          </svg>
+        </div> --></button
+                ><button id="782:122109" class="btn ibtmatback-782122109">
+                  <div id="782:122110" class="svgleft-782122110">
+                    <svg
+                      width="19"
+                      height="18"
+                      viewBox="0 0 19 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.07031 8.6875L11.8906 1.83203C12.2422 1.51562 12.7695 1.51562 13.0859 1.83203L13.8945 2.64062C14.2109 2.95703 14.2109 3.48438 13.8945 3.83594L8.48047 9.25L13.8945 14.6992C14.2109 15.0508 14.2109 15.5781 13.8945 15.8945L13.0859 16.7031C12.7695 17.0195 12.2422 17.0195 11.8906 16.7031L5.07031 9.84766C4.75391 9.53125 4.75391 9.00391 5.07031 8.6875Z"
+                        fill="#464E5F"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

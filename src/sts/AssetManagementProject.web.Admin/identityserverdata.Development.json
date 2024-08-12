@@ -1,0 +1,250 @@
+﻿{
+    "IdentityServerData": {
+        "IdentityResources": [
+            {
+                "Name": "roles",
+                "Enabled": true,
+                "DisplayName": "Roles",
+                "UserClaims": [
+                    "role"
+                ]
+            },
+            {
+                "Name": "openid",
+                "Enabled": true,
+                "Required": true,
+                "DisplayName": "Your user identifier",
+                "UserClaims": [
+                    "sub"
+                ]
+            },
+            {
+                "Name": "profile",
+                "Enabled": true,
+                "DisplayName": "User profile",
+                "Description": "Your user profile information (first name, last name, etc.)",
+                "Emphasize": true,
+                "UserClaims": [
+                    "name",
+                    "family_name",
+                    "given_name",
+                    "middle_name",
+                    "nickname",
+                    "preferred_username",
+                    "profile",
+                    "picture",
+                    "website",
+                    "gender",
+                    "birthdate",
+                    "zoneinfo",
+                    "locale",
+                    "updated_at"
+                ]
+            },
+            {
+                "Name": "email",
+                "Enabled": true,
+                "DisplayName": "Your email address",
+                "Emphasize": true,
+                "UserClaims": [
+                    "email",
+                    "email_verified"
+                ]
+            },
+            {
+                "Name": "address",
+                "Enabled": true,
+                "DisplayName": "Your address",
+                "Emphasize": true,
+                "UserClaims": [
+                    "address"
+                ]
+            }
+        ],
+        "ApiScopes": [
+            {
+                "Name": "CatalystAdminClient_api",
+                "DisplayName": "CatalystAdminClient_api",
+                "Required": true,
+                "UserClaims": [
+                    "role",
+                    "name"
+                ]
+            },
+            {
+                "Name": "BlastAsiaCatalyst_api",
+                "DisplayName": "BlastAsiaCatalyst_api",
+                "Required": true,
+                "UserClaims": [
+                    "role",
+                    "name"
+                ]
+            }
+        ],
+        "ApiResources": [
+            {
+                "Name": "CatalystAdminClient_api",
+                "Scopes": [
+                    "CatalystAdminClient_api"
+                ]
+            },
+            {
+                "Name": "AvensysPOC.web",
+                "Scopes": [
+                    "BlastAsiaCatalyst_api"
+                ]
+            }
+
+        ],
+      "Clients": [
+        {
+          "ClientId": "CatalystAdminClient",
+          "ClientName": "CatalystAdminClient",
+          "ClientUri": "https://localhost:44303",
+          "AllowedGrantTypes": [
+            "authorization_code"
+          ],
+          "RequirePkce": true,
+          "ClientSecrets": [
+            {
+              "Value": "Bl@st123"
+            }
+          ],
+          "RedirectUris": [
+            "https://localhost:44303/signin-oidc"
+          ],
+          "FrontChannelLogoutUri": "https://localhost:44303/signout-oidc",
+          "PostLogoutRedirectUris": [
+            "https://localhost:44303/signout-callback-oidc"
+          ],
+          "AllowedCorsOrigins": [
+            "https://localhost:44303"
+          ],
+          "AllowedScopes": [
+            "openid",
+            "email",
+            "profile",
+            "roles"
+          ]
+        },
+        {
+          "ClientId": "catalyst_spa",
+          "ClientName": "Catalyst SPA Client",
+          "ClientUri": "https://localhost:4200",
+          "AllowedGrantTypes": [
+            "authorization_code"
+          ],
+          "RequireClientSecret": false,
+          "RequirePkce": true,
+          "RedirectUris": [
+            "https://localhost:4200/auth-callback"
+          ],
+          "FrontChannelLogoutUri": "https://localhost:4200/signout-oidc",
+          "PostLogoutRedirectUris": [
+            "https://localhost:4200/signout-callback-oidc"
+          ],
+          "AllowedCorsOrigins": [
+            "https://localhost:4200"
+          ],
+          "AllowedScopes": [
+            "openid",
+            "email",
+            "profile",
+            "roles",
+            "BlastAsiaCatalyst_api"
+          ]
+        },
+        {
+          "ClientId": "catalyst_mobile",
+          "DeviceCodeLifetime": 604800,
+          "IdentityTokenLifetime": 604800,
+          "AuthorizationCodeLifetime": 604800,
+          "ClientName": "Catalyst Flutter Mobile Client",
+          "RefreshTokenExpiration": 0,
+          "RefreshTokenUsage": 1,
+          "AbsoluteRefreshTokenLifetime": 604800,
+          "SlidingRefreshTokenLifetime": 3600,
+          "AllowedGrantTypes": [
+            "authorization_code",
+            "client_credentials",
+            "password"
+          ],
+          "AccessTokenLifetime": 604800,
+          "RequireClientSecret": false,
+          "RequirePkce": true,
+          "RedirectUris": [
+            "catalyst.mobile://oauth2redirect"
+          ],
+          "AllowedScopes": [
+            "openid",
+            "email",
+            "profile",
+            "roles",
+            "BlastAsiaCatalyst_api",
+            "CatalystAdminClient_api",
+            "offline_access"
+          ]
+        },
+        {
+          "ClientId": "CatalystAdminClient_api_swaggerui",
+          "ClientName": "CatalystAdminClient_api_swaggerui",
+          "AllowedGrantTypes": [
+            "authorization_code"
+          ],
+          "RequireClientSecret": false,
+          "RequirePkce": true,
+          "RedirectUris": [
+            "https://localhost:44302/swagger/oauth2-redirect.html"
+          ],
+          "AllowedScopes": [
+            "CatalystAdminClient_api"
+          ],
+          "AllowedCorsOrigins": [
+            "https://localhost:44302"
+          ]
+        },
+        {
+          "ClientId": "BlastAsiaCatalystClient_api_swaggerui",
+          "ClientName": "BlastAsiaCatalystClient_api_swaggerui",
+          "AllowedGrantTypes": [
+            "authorization_code"
+          ],
+          "RequireClientSecret": false,
+          "RequirePkce": true,
+          "RedirectUris": [
+            "https://localhost:44341/swagger/oauth2-redirect.html"
+          ],
+          "AllowedScopes": [
+            "BlastAsiaCatalyst_api"
+          ],
+          "AllowedCorsOrigins": [
+            "https://localhost:44341"
+          ]
+        },
+        {
+        "ClientId": "ida_script",
+        "ClientName": "IDA Script",
+        "AllowedGrantTypes": [
+          "client_credentials"
+        ],
+        "RequireClientSecret": true,
+        "RequirePkce": false,
+        "IncludeJwtId":  true,
+        "ClientSecrets": [
+          {
+            "Value": "secret"
+          }
+        ],
+        "AllowedScopes": [
+          "BlastAsiaCatalyst_api"
+        ],
+        "ClientClaims": [
+          {
+            "Type": "user",
+            "Value": "admin"
+          }
+        ]
+      }
+      ]
+    }
+}
